@@ -18,7 +18,7 @@
 	<link rel="stylesheet" href="css/magnific-popup.css">
 
 	<link rel="stylesheet" href="css/aos.css">
-
+	<link rel="icon" href="./images/kosongan_coffee.png" type="image/png">
 	<link rel="stylesheet" href="css/ionicons.min.css">
 
 	<link rel="stylesheet" href="css/bootstrap-datepicker.css">
@@ -31,6 +31,54 @@
 	
 	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+<a id="floatingIcon" href="#" class="floating-icon pulse">
+  <img src="images/WA.png" alt="WhatsApp Icon" id="floatingIconImg">
+</a>
+
+<style>
+  .floating-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #25d366;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transition: all 0.3s ease-in-out;
+  }
+  .floating-icon img {
+    width: 35px;
+    height: 35px;
+  }
+
+  /* Pulse Animation */
+  .pulse {
+    animation: pulse 1.5s infinite;
+  }
+  @keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 0.7; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+
+  /* Arrow Icon Style (bottom state) */
+  .arrow-up {
+    background: #fff;
+    border: 2px solid orange;
+  }
+  .arrow-up::before {
+    content: "↑";
+    font-size: 28px;
+    color: orange;
+  }
+</style>
+
 </head>
 
 <body>
@@ -74,16 +122,14 @@
 			<div class="overlay"></div>
 			<div class="container">
 				<div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
-
 					<div class="col-md-8 col-sm-12 text-center ftco-animate">
 						<span class="subheading">Welcome</span>
 						<h1 class="mb-4">The Authentic Temanggung Coffee</h1>
 						<p class="mb-4 mb-md-5">Experience the rich, original flavors of carefully selected coffee beans
 							grown in the fertile highlands of Temanggung, Central Java.</p>
-						<p><a href="https://api.whatsapp.com/send/?phone=6282225428427&text&type=phone_number&app_absent=0" class="btn btn-primary p-3 px-xl-4 py-xl-3">Order Now</a> <a href="menu.html"
-								class="btn btn-white btn-outline-white p-3 px-xl-4 py-xl-3">View Menu</a></p>
+						<p><a href="https://api.whatsapp.com/send/?phone=6282225428427&text&type=phone_number&app_absent=0" class="btn btn-primary p-3 px-xl-4 py-xl-3">Order Now</a> 
+							<a href="#our-story" class="btn btn-white btn-outline-white p-3 px-xl-4 py-xl-3 scroll-link">Continue</a></p>
 					</div>
-
 				</div>
 			</div>
 		</div>
@@ -92,14 +138,13 @@
 			<div class="overlay"></div>
 			<div class="container">
 				<div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
-
 					<div class="col-md-8 col-sm-12 text-center ftco-animate">
 						<span class="subheading">Welcome</span>
 						<h1 class="mb-4">Small Beans &amp; Rich Flavor</h1>
 						<p class="mb-4 mb-md-5">A small river named Duden flows by their place and supplies it with the
 							necessary regelialia.</p>
-						<p><a href="https://api.whatsapp.com/send/?phone=6282225428427&text&type=phone_number&app_absent=0" class="btn btn-primary p-3 px-xl-4 py-xl-3">Order Now</a> <a href="menu.html"
-								class="btn btn-white btn-outline-white p-3 px-xl-4 py-xl-3">View Menu</a></p>
+						<p><a href="https://api.whatsapp.com/send/?phone=6282225428427&text&type=phone_number&app_absent=0" class="btn btn-primary p-3 px-xl-4 py-xl-3">Order Now</a> <a href="#our-story"
+								class="btn btn-white btn-outline-white p-3 px-xl-4 py-xl-3 scroll-link">Continue</a></p>
 					</div>
 				</div>
 			</div>
@@ -114,8 +159,8 @@
 						<h1 class="mb-4">Discover the True Essence of Indonesian Coffee</h1>
 						<p class="mb-4 mb-md-5">From the heart of Temanggung — to your cup, we bring you more than
 							coffee; we deliver a taste of culture, history, and passion in every .</p>
-						<p><a href="https://api.whatsapp.com/send/?phone=6282225428427&text&type=phone_number&app_absent=0" class="btn btn-primary p-3 px-xl-4 py-xl-3">Order Now</a> <a href="menu.html"
-								class="btn btn-white btn-outline-white p-3 px-xl-4 py-xl-3">View Menu</a></p>
+						<p><a href="https://api.whatsapp.com/send/?phone=6282225428427&text&type=phone_number&app_absent=0" class="btn btn-primary p-3 px-xl-4 py-xl-3">Order Now</a> <a href="#our-story"
+								class="btn btn-white btn-outline-white p-3 px-xl-4 py-xl-3 scroll-link">Continue</a></p>
 					</div>
 
 				</div>
@@ -195,7 +240,7 @@
 		</div>
 	</section>
 
-	<section class="ftco-about d-md-flex">
+	<section class="ftco-about d-md-flex" id="our-story">
 		<div class="one-half img" style="background-image: url(images/gambar7.jpeg);"></div>
 		<div class="one-half ftco-animate">
 			<div class="overlap">
@@ -883,7 +928,7 @@
 		              <textarea name="" id="" cols="30" rows="2" class="form-control" placeholder="Message"></textarea>
 		            </div>
 		            <div class="form-group ml-md-4">
-		              <input type="submit" value="Order" class="btn btn-primary py-3 px-4" onclick="window.open('https://mail.google.com/mail/?view=cm&fs=1&to=bhinekaperkasaavadi@gmail.com&su=Pesanan%20Kopi%20Kosongan&body=Halo%20selamat%20datang%20di%20kosongan%20kopi%20distributor,%20untuk%20melakukan%20pemesanan,%20mohon%20ketersediaan%20rekan%20kosongan%20kopi%20untuk%20mengisi%20data%20dibawah%20ini%20ya%20%0A%0A%0APesanan%0AVarian%20Kopi%20:%0AJumlah%20:%0ANama%20Penerima%20:%0ANomor%20Penerima%20:%0AAlamat%20Penerima%20:%0A%0A%0ATerima%20kasih%20atas%20datanya,%20mohon%20dipastikan%20kembali%20pesanan%20anda,%20agar%20tidak%20terjadi%20kesalahan%20dalam%20proses%20transaksi%20ya%20%0A%0A%0ANote:%20Mohon%20diperhatikan%20kembali%20pesanan%20anda%20sebelum%20dikirim,%20untuk%20komplainan%20akan%20kami%20layani%20apabila%20melampirkan%20video%20unboxing%20dan%20foto%20bukti,%20jika%20tidak%20melampirkan%20bukti,%20maka%20akan%20kami%20anggap%20tidak%20sah%20ya.%0AMohon%20ketersediaan%20anda%20untuk%20melampirkan%20bukti%20pembayaran,%20agar%20pesanan%20bisa%20dikirim%20dengan%20aman%20ya%F0%9F%99%8F%F0%9F%98%8A', '_blank')">
+		              <input type="submit" value="Order" class="btn btn-primary py-3 px-4" onclick="window.open('https://mail.google.com/mail/?view=cm&fs=1&to=bhinekaperkasaavadi@gmail.com&su=Pesanan%20Kopi%20Kosongan&body=Halo%20selamat%20datang%20di%20kosongan%20kopi%20distributor,%20untuk%20melakukan%20pemesanan,%20mohon%20ketersediaan%20rekan%20kosongan%20kopi%20untuk%20mengisi%20data%20dibawah%20ini%20ya%20%0A%0A%0APesanan%0AVarian%20Kopi%20:%0AJumlah%20:%0ANama%20Penerima%20:%0ANomor%20Penerima%20:%0AAlamat%20Penerima%20:%0A%0A%0ATerima%20kasih%20atas%20datanya,%20mohon%20dipastikan%20kembali%20pesanan%20anda,%20agar%20tidak%20terjadi%20kesalahan%20dalam%20proses%20transaksi%20ya%20%0A%0A%0ANote:%20Mohon%20diperhatikan%20kembali%20pesanan%20anda%20sebelum%20dikirim,%20untuk%20komplainan%20akan%20kami%20layani%20apabila%20melampirkan%20video%20unboxing%20dan%20foto%20bukti,%20jika%20tidak%20melampirkan%20bukti,%20maka%20akan%20kami%20anggap%20tidak%20sah%20ya.%0AMohon%20ketersediaan%20anda%20untuk%20melampirkan%20bukti%20pembayaran,%20agar%20pesanan%20bisa%20dikirim%20dengan%20aman%20ya%F0%9F%99%8F%F0%9F%98%8A', '_blank')"ft>
 		            </div>
 	    				</div>
 	    			</form>
@@ -996,6 +1041,69 @@
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
 	<script src="js/google-map.js"></script>
 	<script src="js/main.js"></script>
+
+<script>
+  const floatingIcon = document.getElementById("floatingIcon");
+  const floatingImg = document.getElementById("floatingIconImg");
+  const ourStorySection = document.querySelector(".ftco-about"); // section Our Story
+  const footerSection = document.querySelector("footer"); // section Footer
+
+  // Fungsi scroll ke atas
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // Klik icon: scroll ke atas lalu menuju link
+  floatingIcon.addEventListener("click", function(e) {
+    e.preventDefault();
+    scrollToTop();
+    // 👉 Tambahkan link redirect di bawah ini jika perlu
+    window.location.href = "https://api.whatsapp.com/send/?phone=6282225428427&text&type=phone_number&app_absent=0";
+  });
+
+  // Event scroll
+  window.addEventListener("scroll", function() {
+    const ourStoryTop = ourStorySection.offsetTop;
+    const footerTop = footerSection.offsetTop;
+
+    if (window.scrollY >= ourStoryTop) {
+      floatingIcon.style.display = "flex"; // tampilkan icon
+    } else {
+      floatingIcon.style.display = "none"; // sembunyikan sebelum Our Story
+    }
+
+    if (window.scrollY + window.innerHeight >= footerTop) {
+      // Jika sudah sampai footer → ganti ke panah
+      floatingIcon.classList.remove("pulse");
+      floatingIcon.classList.add("arrow-up");
+      floatingImg.style.display = "none";
+    } else {
+      // Default WhatsApp style
+      floatingIcon.classList.add("pulse");
+      floatingIcon.classList.remove("arrow-up");
+      floatingImg.style.display = "block";
+    }
+  });
+
+  // Default: sembunyikan dulu icon
+  floatingIcon.style.display = "none";
+</script>
+
+<script>
+  // Smooth scroll untuk tombol View Menu
+  document.querySelectorAll('.scroll-link').forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
+</script>
 
 </body>
 
